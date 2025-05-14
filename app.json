@@ -19,10 +19,29 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "permissions": [
+        "android.permission.CAMERA",
+        "android.permission.RECORD_AUDIO",
+        "android.permission.CAMERA",
+        "android.permission.RECORD_AUDIO"
+      ],
+      "package": "com.brian_jordy.eBonus"
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": [
+      "expo-sqlite",
+      "expo-font",
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Accorder à $(PRODUCT_NAME) l'accès à votre caméra",
+          "microphonePermission": "Accorder à $(PRODUCT_NAME) l'accès à votre microphone",
+          "recordAudioAndroid": true
+        }
+      ]
+    ]
   }
 }
