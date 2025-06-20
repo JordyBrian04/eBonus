@@ -22,8 +22,6 @@
       },
       "permissions": [
         "android.permission.CAMERA",
-        "android.permission.RECORD_AUDIO",
-        "android.permission.CAMERA",
         "android.permission.RECORD_AUDIO"
       ],
       "package": "com.brian_jordy.eBonus"
@@ -42,6 +40,11 @@
           "recordAudioAndroid": true
         }
       ]
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "a54bf8e1-026b-44ea-bbb3-c2f040ea341e"
+      }
+    }
   }
 }
