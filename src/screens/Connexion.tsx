@@ -111,10 +111,10 @@ const Connexion = ({navigation}: any) => {
             </View>
 
             <View style={{marginTop: 25, flexDirection: 'row', alignItems: 'center', gap: 12}}>
-                <TouchableOpacity style={{width: '45%', justifyContent: 'center', alignItems: 'center',padding: 13, borderRadius: 15, backgroundColor: choixConnexion == 'utilisateur' ? colors.primary : ''}} onPress={() => setChoixConnexion('utilisateur')}>
+                <TouchableOpacity style={{width: '45%', justifyContent: 'center', alignItems: 'center',padding: 13, borderRadius: 15, backgroundColor: choixConnexion == 'utilisateur' ? colors.primary : '#fff'}} onPress={() => setChoixConnexion('utilisateur')}>
                     <Text style={{fontFamily: 'Regular', fontSize: 16, color: choixConnexion == 'utilisateur' ? "#fff":"#000", textAlign: 'center'}}>Se connecter en tant qu'utilisateur</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={{width: '45%', justifyContent: 'center', alignItems: 'center', padding: 13, borderRadius: 15, backgroundColor: choixConnexion == 'agent' ? colors.primary : ''}} onPress={() => setChoixConnexion('agent')}>
+                <TouchableOpacity style={{width: '45%', justifyContent: 'center', alignItems: 'center', padding: 13, borderRadius: 15, backgroundColor: choixConnexion == 'agent' ? colors.primary : '#fff'}} onPress={() => setChoixConnexion('agent')}>
                     <Text style={{fontFamily: 'Regular', fontSize: 16, color: choixConnexion == 'agent' ? "#fff":"#000", textAlign: 'center'}}>Se connecter en tant qu'agent</Text>
                 </TouchableOpacity>
             </View>
@@ -187,15 +187,17 @@ const Connexion = ({navigation}: any) => {
                 </TouchableOpacity>
             </View>
 
-            <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'center', marginTop: 130, width: '100%', gap: 10}}>
-                <Text style={{fontFamily: 'Regular', fontSize: 16, color: "#000"}}>
-                    Pas encore de compte ?
-                </Text>
-                <TouchableOpacity onPress={() => navigation.navigate('Inscription')}>
-                    <Text style={{fontFamily: 'SemiBold', fontSize: 16, color: colors.primary}}>
-                        Inscrivez-vous</Text>
-                </TouchableOpacity>
-            </View>
+            {choixConnexion == 'utilisateur' && (
+                <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'center', marginTop: 130, width: '100%', gap: 10}}>
+                    <Text style={{fontFamily: 'Regular', fontSize: 16, color: "#000"}}>
+                        Pas encore de compte ?
+                    </Text>
+                    <TouchableOpacity onPress={() => navigation.navigate('Inscription')}>
+                        <Text style={{fontFamily: 'SemiBold', fontSize: 16, color: colors.primary}}>
+                            Inscrivez-vous</Text>
+                    </TouchableOpacity>
+                </View>
+            )}
         </KeyboardAvoidingView>
     </SafeAreaView>
   );
